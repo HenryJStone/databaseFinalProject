@@ -1,0 +1,8 @@
+streamlit
+sqlalchemy
+altair==4 
+brew install mysql-client pkg-config
+mysqlclient
+'pip install mysql.connector'
+'pip install mysqlclient'
+'pip install mysql-connector-python-rf'
