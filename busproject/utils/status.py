@@ -14,7 +14,7 @@ def display_page():
     b_id = int(st.number_input('Bus Number', min_value=101, step=1))
     if st.button('Check in'):
         st.table(conn.query(f'SELECT * FROM current_buses WHERE bus_num = {b_id}'))
-        result = conn.query('SELECT open_seats FROM current_buses WHERE bus_num = 101')
+        result = conn.query('SELECT open_seats FROM current_buses WHERE bus_num = {b_id}')
         df = pd.DataFrame(result)
         num = int(df['open_seats'].iloc[0] - 1)
         q = 'UPDATE current_buses SET open_seats = %s WHERE bus_num = %s'
